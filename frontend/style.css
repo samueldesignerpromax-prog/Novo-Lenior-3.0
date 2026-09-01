@@ -1,0 +1,32 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background: #0d0d0d; color: #f0f0f0; min-height: 100vh; display: flex; flex-direction: column; }
+header { background: rgba(13,13,13,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid #333; padding: 14px 20px; position: sticky; top: 0; z-index: 999; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 20px; width: 100%; }
+.header-content { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.6rem; font-weight: bold; color: #d4af37; display: flex; align-items: center; gap: 10px; }
+.status { color: #888; font-size: 0.9rem; }
+main { flex: 1; padding: 30px 0 60px; }
+.chat-area { background: #1a1a1a; border-radius: 12px; border: 1px solid #333; padding: 16px; margin-bottom: 16px; min-height: 400px; max-height: 500px; overflow-y: auto; display: flex; flex-direction: column; }
+.message { margin-bottom: 12px; max-width: 80%; padding: 10px 16px; border-radius: 18px; word-wrap: break-word; }
+.user { align-self: flex-end; background: #d4af37; color: #000; border-radius: 18px 18px 4px 18px; }
+.bot { align-self: flex-start; background: #2a2a2a; color: #fff; border-radius: 18px 18px 18px 4px; }
+.empty-state { text-align: center; color: #666; margin-top: 40px; }
+.empty-state p { font-size: 1.2rem; margin-bottom: 4px; }
+.input-area { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.input-area input { flex: 1; min-width: 200px; background: #2a2a2a; border: 1px solid #444; border-radius: 8px; padding: 10px 14px; color: #fff; font-size: 1rem; }
+.input-area input:focus { outline: none; border-color: #d4af37; }
+.btn { background: #d4af37; color: #000; border: none; padding: 10px 24px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px; }
+.btn:hover { background: #b8962c; transform: scale(1.05); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.btn-audio { background: transparent; border: 1px solid #888; color: #fff; padding: 10px 16px; border-radius: 30px; cursor: pointer; }
+.btn-audio:hover { background: #333; }
+.recording { background: #e74c3c; border-color: #e74c3c; animation: pulse 1s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.6} }
+.typing-dots { display: inline-flex; gap: 4px; padding: 4px 0; }
+.typing-dots span { width: 8px; height: 8px; background: #888; border-radius: 50%; animation: blink 1.4s infinite both; }
+.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes blink { 0%,80%,100%{opacity:0.2;transform:scale(0.8)} 40%{opacity:1;transform:scale(1)} }
+footer { text-align: center; padding: 20px; color: #555; border-top: 1px solid #222; font-size: 0.85rem; }
+.audio-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+@media (max-width: 600px) { .input-area { flex-direction: column; } .input-area input { width: 100%; } }
