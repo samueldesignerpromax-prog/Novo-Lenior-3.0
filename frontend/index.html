@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lenior Chat</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo"><i class="fas fa-brain"></i> Lenior</div>
+            <div class="status"><span id="statusDot">🟢</span> <span id="statusText">Online</span></div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap;">
+                <h2 style="color:#d4af37;">💬 Conversar com Lenior</h2>
+                <span style="color:#666; font-size:0.8rem;" id="sessionDisplay">Sessão: -</span>
+            </div>
+            <div class="chat-area" id="chatArea">
+                <div class="empty-state">
+                    <p>🧠 Pergunte algo para Lenior</p>
+                    <p style="font-size:0.9rem;">Digite uma mensagem ou grave um áudio</p>
+                </div>
+                <div id="messagesContainer"></div>
+                <div id="typingIndicator" style="display:none; align-self:flex-start; background:#2a2a2a; padding:10px 18px; border-radius:18px; margin-top:4px;">
+                    <div class="typing-dots"><span></span><span></span><span></span></div>
+                </div>
+            </div>
+            <div class="input-area">
+                <input type="text" id="msgInput" placeholder="Digite sua mensagem..." />
+                <button class="btn" id="sendBtn"><i class="fas fa-paper-plane"></i> Enviar</button>
+                <div class="audio-controls">
+                    <button class="btn-audio" id="recordBtn"><i class="fas fa-microphone"></i> Gravar</button>
+                    <button class="btn-audio" id="stopBtn" style="display:none; background:#e74c3c; color:#fff;"><i class="fas fa-stop"></i> Parar</button>
+                    <button class="btn-audio" id="sendAudioBtn" style="display:none;"><i class="fas fa-upload"></i> Enviar Áudio</button>
+                    <button class="btn-audio" id="cancelAudioBtn" style="display:none;">Cancelar</button>
+                </div>
+            </div>
+            <p style="color:#555; font-size:0.75rem; margin-top:12px; text-align:center;">
+                Lenior usa Groq, OpenRouter e Hugging Face como fallback.
+                <a href="/status" target="_blank" style="color:#d4af37; margin-left:6px;">Ver status</a>
+            </p>
+        </div>
+    </main>
+    <footer><p>© 2026 Lenior – Assistente IA | Criado para Samuel</p></footer>
+    <script src="/static/script.js"></script>
+</body>
+</html>
